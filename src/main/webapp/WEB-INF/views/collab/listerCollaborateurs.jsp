@@ -3,8 +3,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-<!-- Required meta tags -->
 <meta charset="utf-8">
+
+<link rel="stylesheet" href="<%=request.getContextPath()%>/bootstrap-3.3.7-
+dist/css/bootstrap.css">
 <title>SGP - App</title>
 
 </head>
@@ -13,7 +15,7 @@
 
 	<ul>
 		<%
-			List<String> listeNoms = (List<String>) request.getAttribute("listeNoms");
+			List<String> listeNoms =(List<String>) request.getAttribute("listeNoms");
 			for (String nom : listeNoms) {
 		%>
 		<li><%=nom%></li>
