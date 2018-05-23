@@ -36,6 +36,7 @@ public class FrequentationFilter implements Filter {
 		long after = System.currentTimeMillis();
 		vis.setTempsExecution(after-before);
 		
+		Constantes.WEB_SERVICE.sauvegarderVisite(vis);
 	}
 
 	@Override
