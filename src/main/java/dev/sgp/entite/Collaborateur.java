@@ -2,6 +2,7 @@ package dev.sgp.entite;
 
 import java.time.LocalDate;
 import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class Collaborateur {
 
@@ -15,6 +16,8 @@ public class Collaborateur {
 	private String photo;
 	private ZonedDateTime dateHeureCreation;
 	private boolean actif;
+	private String intitulePoste;
+	private Departement departement;
 	
 	public Collaborateur(String matricule, String nom, String prenom, LocalDate dateDeNaissance, String adresse,
 			String num_secu, String emailPro, String photo, ZonedDateTime dateHeureCreation, boolean actif) {
@@ -109,6 +112,26 @@ public class Collaborateur {
 
 	public void setActif(boolean actif) {
 		this.actif = actif;
+	}
+
+
+	public String getIntitulePoste() {
+		return intitulePoste;
+	}
+
+
+	public void setIntitulePoste(String intitulePoste) {
+		this.intitulePoste = intitulePoste;
+	}
+
+
+	public Departement getDepartement() {
+		return departement;
+	}
+
+
+	public void setDepartement(Departement departement) {
+		this.departement = departement;
 	}
 	
 	
