@@ -1,6 +1,7 @@
 <%@page import="dev.sgp.entite.VisiteWeb"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" pageEncoding="UTF-8"%>
+<%@ page isELIgnored ="false" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <!DOCTYPE html>
@@ -37,9 +38,7 @@
 				<tr>
 					<th ALIGN="CENTER">Chemin</th>
 					<th ALIGN="CENTER">Nombre de Visites</th>
-					<th ALIGN="CENTER">Min (ms)</th>
-					<th ALIGN="CENTER">Max (ms)</th>
-					<th ALIGN="CENTER">Moyenne (ms)</th>
+					<th ALIGN="CENTER">Temps Execution</th>
 				</tr>
 			</thead>
 
@@ -49,9 +48,7 @@
 					<tr>
 						<td>${st.chemin}</td>
 						<td>${st.nbVisites}</td>
-						<td>${st.min}</td>
-						<td>${st.max}</td>
-						<td>${st.moyenne}</td>
+						<td>${st.tempsExecution}</td>
 					</tr>
 
 
@@ -59,7 +56,11 @@
 			</tbody>
 		</table>
 	</section>
+
+	
+			
 </body>
+
 </html>
 
 

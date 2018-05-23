@@ -29,8 +29,9 @@ public class FrequentationFilter implements Filter {
 			throws IOException, ServletException {
 			
 		VisiteWeb vis = new VisiteWeb();
+		String path = ((HttpServletRequest)req).getRequestURI();
 		vis.setId(1);
-		vis.setChemin((HttpServletRequest)req).getRequestURI();
+		vis.setChemin(path);
 		long before = System.currentTimeMillis();
 		chain.doFilter(req, resp);
 		long after = System.currentTimeMillis();
