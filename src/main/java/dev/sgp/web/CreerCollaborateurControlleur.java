@@ -37,10 +37,11 @@ public class CreerCollaborateurControlleur extends HttpServlet {
 		String email = nom + "." + prenom + "@societe.com";
 		String photo = "photo.png";
 		String matricule = "M" + Math.floor(Math.random()*101);
+		
 		ZonedDateTime dateHeureCreation = ZonedDateTime.now(ZoneId.of("Europe/Paris"));
 		
 	
-		if(req.getParameter("nom")==null || req.getParameter("prenom")==null || req.getParameter("dateDeNaissance")==null || req.getParameter("adresse")==null || req.getParameter("numSecu")==null ){
+		if(nom.isEmpty() || prenom.isEmpty() || dateDeNaissance ==null || adresse.isEmpty() || num_secu.isEmpty()){
 			resp.sendError(400);
 		}
 		else if(num_secu.length() != 15){
@@ -48,8 +49,10 @@ public class CreerCollaborateurControlleur extends HttpServlet {
 			resp.getWriter().write("<p>Le numéro de sécurité sociale n'est pas valide</p>");	
 		}
 		else{
+			resp.setStatus(200);
 			Collaborateur collab = new Collaborateur(matricule, nom, prenom, LocalDate.parse(dateDeNaissance), adresse, num_secu, email, photo, dateHeureCreation, true);
 			Constantes.COLLAB_SERVICE.sauvegarderCollaborateur(collab);
+			resp.sendRedirect(req.getContextPath() + "/collaborateurs/lister");
 		}
 	}
 }
