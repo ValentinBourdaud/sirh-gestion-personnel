@@ -24,9 +24,9 @@ dist/css/bootstrap.css">
 		</button>
 		<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
 			<div class="navbar-nav">
-				<a class="nav-item nav-link" href="#">Collaborateurs</a> <a
-					class="nav-item nav-link" href="#">Statistiques</a> <a
-					class="nav-item nav-link" href="#">Activites</a>
+				<a class="nav-item nav-link" href='<c:url value="/collaborateurs/lister"></c:url>'>Collaborateurs</a> 
+				<a class="nav-item nav-link" href='<c:url value="/collaborateurs/stats"></c:url>'>Statistiques</a> 
+				<a class="nav-item nav-link" href='<c:url value="/collaborateurs/activites"></c:url>'>Activites</a>
 			</div>
 		</div>
 	</nav>
